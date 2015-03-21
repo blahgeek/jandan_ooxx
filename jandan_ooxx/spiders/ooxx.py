@@ -26,5 +26,5 @@ class OoxxSpider(scrapy.Spider):
                 item = OoxxItem()
                 item['vote_oo'] = int(vote_oo)
                 item['vote_xx'] = int(vote_xx)
-                item['url'] = img['src']
+                item['url'] = img['org_src'] if img.has_attr('org_src') else img['src']
                 yield item
