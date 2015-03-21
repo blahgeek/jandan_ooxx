@@ -7,10 +7,12 @@
 #
 #     http://doc.scrapy.org/en/latest/topics/settings.html
 #
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 BOT_NAME = 'jandan_ooxx'
 
-FILES_STORE = '/tmp'
+FILES_STORE = os.path.join(BASE_DIR, 'downloads')
 ITEM_PIPELINES = {'jandan_ooxx.pipelines.SingleImagePipeline': 1}
 
 SPIDER_MODULES = ['jandan_ooxx.spiders']
