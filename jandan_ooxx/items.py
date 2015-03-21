@@ -9,8 +9,7 @@ import scrapy
 
 
 class OoxxItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
     url = scrapy.Field()
+    path = scrapy.Field()
     vote_oo = scrapy.Field()
     vote_xx = scrapy.Field()

@@ -10,6 +10,9 @@
 
 BOT_NAME = 'jandan_ooxx'
 
+FILES_STORE = '/tmp'
+ITEM_PIPELINES = {'jandan_ooxx.pipelines.SingleImagePipeline': 1}
+
 SPIDER_MODULES = ['jandan_ooxx.spiders']
 NEWSPIDER_MODULE = 'jandan_ooxx.spiders'
 

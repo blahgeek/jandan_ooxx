@@ -10,9 +10,11 @@ from jandan_ooxx.items import OoxxItem
 class OoxxSpider(scrapy.Spider):
     name = "ooxx"
     allowed_domains = ["jandan.net"]
-    start_urls = [
-        "http://jandan.net/ooxx/page-1356",
-    ]
+
+    def __init__(self, start_page, end_page, *args, **kwargs):
+        super(OoxxSpider, self).__init__(*args, **kwargs)
+        self.start_urls = ["http://jandan.net/ooxx/page-%d" % n 
+                           for n in range(int(start_page), int(end_page))]
 
     def parse(self, response):
         soup = BeautifulSoup(response.body)
